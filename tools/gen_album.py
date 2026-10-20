@@ -13,7 +13,7 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent  # bid-demo-overview/
+ROOT = Path(__file__).resolve().parent.parent  # demo-overview/
 OUT = ROOT / "shots" / "album"
 OUT.mkdir(parents=True, exist_ok=True)
 
