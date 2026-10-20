@@ -23,7 +23,7 @@
 | ② 数据清洗服务 | [data-clean-pipeline](https://github.com/mming-liu/data-clean-pipeline) | [打开清洗报告](https://mming-liu.github.io/data-clean-pipeline/) | `python clean.py --demo` |
 | ③ 数据分析服务 | [offline-analytics-report](https://github.com/mming-liu/offline-analytics-report) | [打开复盘报表](https://mming-liu.github.io/offline-analytics-report/) | `python analyze.py --demo` |
 
-三个项目字段口径统一，可串成 `接口同步 → 清洗 → 报表` 的链路，链路已实测跑通。
+三个项目**独立运行、可分别接单**；需求跨多步时也能串成 `接口同步 → 清洗 → 报表` 的流水线，链路已实测跑通。
 
 ## 三、本仓库内容
 

@@ -163,7 +163,7 @@ def album_script() -> None:
 def album_cover() -> None:
     body = f"""
   <div class="head">
-    <div class="tag">本地 Python 服务 · 三件套演示</div>
+    <div class="tag">本地 Python 服务 · 交付样例</div>
     <h1>文件和表格的活儿<br>交给跑在本机的脚本</h1>
     <p>数据不出你的电脑 · 源码交付 · 跑前先预览 · 每一步有留痕</p>
   </div>

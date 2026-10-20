@@ -80,12 +80,13 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
       <div class="stat"><b>7 图 + 7 条</b><span>复盘图表与自动结论（3,975 条明细）</span></div>
     </div>
     <div class="chain">
-      <div class="node"><b><a href="https://github.com/mming-liu/py-automation-kit" target="_blank" rel="noopener">① py-automation-kit</a></b>接口同步 / 批量重命名 / 表格合并 → 产出原始数据</div>
-      <div class="link">→</div>
-      <div class="node"><b><a href="https://github.com/mming-liu/data-clean-pipeline" target="_blank" rel="noopener">② data-clean-pipeline</a></b>脏数据体检 → 规则清洗 → 标准数据集 + 逐格留痕</div>
-      <div class="link">→</div>
-      <div class="node"><b><a href="https://github.com/mming-liu/offline-analytics-report" target="_blank" rel="noopener">③ offline-analytics-report</a></b>指标拆解 → 图表 → 汇报级复盘报表</div>
+      <div class="node"><b><a href="https://github.com/mming-liu/py-automation-kit" target="_blank" rel="noopener">① Python 脚本开发</a></b>批量重命名 / 表格合并 / 接口对接 / 运行日报</div>
+      <div class="link">+</div>
+      <div class="node"><b><a href="https://github.com/mming-liu/data-clean-pipeline" target="_blank" rel="noopener">② 数据清洗</a></b>脏表体检 / 规则清洗 / 标准数据集 + 逐格留痕</div>
+      <div class="link">+</div>
+      <div class="node"><b><a href="https://github.com/mming-liu/offline-analytics-report" target="_blank" rel="noopener">③ 离线数据分析</a></b>指标拆解 / 图表 / 汇报级复盘报表</div>
     </div>
+    <p style="margin:14px 0 0;font-size:12px;color:#a9c6e2;position:relative;z-index:1">三个服务<b style="color:#fff">单独下单、独立交付</b>；需求跨多步时，也可串成一条流水线（②的清洗产物可直接喂给③，已实测验证）。</p>
   </div>
 
   <div class="grid">
@@ -149,7 +150,7 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
     <div class="verify">
       <div class="v"><div class="n">1</div><div class="t"><b>项目一 · 自动化脚本</b>：19 个乱名文件归位、3 份报表合并、137 条订单同步（含重试）</div><div class="c">python cli.py demo</div></div>
       <div class="v"><div class="n">2</div><div class="t"><b>项目二 · 数据清洗</b>：生成脏数据 → 清洗 → 出逐格留痕与 HTML 报告</div><div class="c">python clean.py --demo</div></div>
-      <div class="v"><div class="n">3</div><div class="t"><b>项目三 · 数据分析</b>：4,000 条明细 → 指标拆解 → 汇报级报表 + 结论摘要</div><div class="c">python analyze.py --demo</div></div>
+      <div class="v"><div class="n">3</div><div class="t"><b>项目三 · 数据分析</b>：3,975 条明细 → 指标拆解 → 汇报级报表 + 结论摘要</div><div class="c">python analyze.py --demo</div></div>
       <div class="v"><div class="n">4</div><div class="t"><b>验证质量</b>：43 条自测用例（边界 / 异常路径 / 行数守恒），输出 OK 即通过</div><div class="c">python -m unittest discover -s tests</div></div>
     </div>
     <div class="note">测试结果（本机实测）：py-automation-kit <span class="ok">17/17 OK</span> · data-clean-pipeline <span class="ok">15/15 OK</span> · offline-analytics-report <span class="ok">11/11 OK</span>。</div>
