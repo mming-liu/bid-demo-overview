@@ -178,7 +178,7 @@ def album_cover() -> None:
     <div class="k">3,975 条明细 → 7 张图 + 7 条自动结论</div></div>
   <div class="sec" style="margin-top:24px"><h2>怎么验证不是空话</h2><ul class="concl">
     <li><b>样例可复跑</b> —— 每个项目自带演示数据，一条命令重新生成同样的结果</li>
-    <li><b>43 条自测用例全过</b> —— 边界和异常路径都测过，随源码一起交付</li>
+    <li><b>49 条自测用例全过</b> —— 边界和异常路径都测过，随源码一起交付</li>
     <li><b>在线样例报告</b> —— 三个产品的完整报告可在浏览器直接打开（链接见店铺）</li>
   </ul></div>"""
     io.open(OUT / "p0_cover.html", "w", encoding="utf-8").write(page(body, "案例均可现场复现"))

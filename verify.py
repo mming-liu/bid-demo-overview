@@ -20,7 +20,7 @@ def main() -> int:
         pass
 
     print("=" * 62)
-    print("交付样例 · 一键质量验证（43 条自测用例）")
+    print("交付样例 · 一键质量验证（49 条自测用例）")
     print("=" * 62)
 
     total_passed, total_all, all_ok = 0, 0, True
