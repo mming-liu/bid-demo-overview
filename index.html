@@ -69,15 +69,15 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
 <div class="wrap">
 
   <div class="hero">
-    <div class="tag">能力演示总览 · 可现场复现</div>
-    <h1>Python 本地脚本 · 数据清洗 · 离线数据分析<br><em>三个可运行的项目，43 条自测用例，零第三方依赖</em></h1>
-    <p>由「需求分析师 + 测试与开发工程师」轻量化协作交付。每一个数字都来自真实运行的脚本输出——本页所有截图不是示意图，是三个项目实际跑出来的产物。</p>
+    <div class="tag">本地交付 · 文件数据不出你的电脑</div>
+    <h1>重复的文件表格活儿，<em>做成一键就能跑的本地脚本</em></h1>
+    <p>Python 脚本开发 · 数据清洗 · 离线数据分析，三个方向各有一个真实跑通的项目。下面所有截图不是示意图，是脚本实际运行的产物。</p>
     <div class="stats">
-      <div class="stat"><b>3</b><span>可运行项目（对应三条产品线）</span></div>
-      <div class="stat"><b>4,425</b><span>行源码，含注释可读可改</span></div>
-      <div class="stat"><b>43 / 43</b><span>自测用例通过（0 失败）</span></div>
-      <div class="stat"><b>0</b><span>第三方依赖 · 断网可运行</span></div>
-      <div class="stat"><b>100%</b><span>产物本地留痕 · 可逐条追溯</span></div>
+      <div class="stat"><b>19 个</b><span>乱名文件一键归位（先预览再执行）</span></div>
+      <div class="stat"><b>3 张</b><span>口径不一的报表自动对齐合并</span></div>
+      <div class="stat"><b>302 → 260</b><span>脏表行数：清洗交付（逐格留痕）</span></div>
+      <div class="stat"><b>1,323 处</b><span>单元格修复，全部可追溯</span></div>
+      <div class="stat"><b>7 图 + 7 条</b><span>复盘图表与自动结论（3,975 条明细）</span></div>
     </div>
     <div class="chain">
       <div class="node"><b><a href="https://github.com/mming-liu/py-automation-kit" target="_blank" rel="noopener">① py-automation-kit</a></b>接口同步 / 批量重命名 / 表格合并 → 产出原始数据</div>
@@ -94,14 +94,14 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
       <div class="shot"><img src="shots/s1.png" alt="项目一运行报告截图">
         <div class="zoom"><a href="https://mming-liu.github.io/py-automation-kit/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
       <div class="body">
-        <div class="num">PROJECT 01 · 对应服务 1-1 / 1-2 / 1-3</div>
-        <h3>py-automation-kit · Python 脚本开发</h3>
-        <p class="desc">一条命令跑完四个任务，每一步可独立复跑。</p>
+        <div class="num">PRODUCT 01 · 对应服务 1-1 / 1-2 / 1-3</div>
+        <h3>Python 脚本开发</h3>
+        <p class="desc">把每天重复的文件、表格操作，做成一条命令就能跑的本地脚本。</p>
         <ul>
-          <li>批量重命名：<b>先出预览表</b>，冲突检测不过不落盘，可回滚</li>
-          <li>多表合并：表头不一致自动按并集对齐，带来源列可追溯</li>
-          <li>接口同步：内置 Mock 服务，首请求 503 演示重试，逐页留痕</li>
-          <li>17 条边界测试（假日期 / 空输入 / 连不上接口）</li>
+          <li><b>19 个乱名文件</b>按规则归位：先出预览，确认后才动你的原文件</li>
+          <li><b>3 张表头不一的报表</b>自动对齐合并，带来源标记可追溯</li>
+          <li><b>137 条订单</b>分页同步，请求失败自动重试并留痕</li>
+          <li>交付源码 + 运行说明，改文件名规则 / 合并口径不用改代码</li>
         </ul>
         <div class="cmd">python cli.py demo</div>
       </div>
@@ -111,14 +111,14 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
       <div class="shot"><img src="shots/s2.png" alt="项目二清洗报告截图">
         <div class="zoom"><a href="https://mming-liu.github.io/data-clean-pipeline/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
       <div class="body">
-        <div class="num">PROJECT 02 · 对应服务 2-1 / 2-2 / 2-3</div>
-        <h3>data-clean-pipeline · 数据清洗</h3>
-        <p class="desc">脏表进、标准数据集出，每一个改动都有留痕。</p>
+        <div class="num">PRODUCT 02 · 对应服务 2-1 / 2-2 / 2-3</div>
+        <h3>数据清洗服务</h3>
+        <p class="desc">脏表进，标准表出，每一格改动都能查到为什么、改成了什么。</p>
         <ul>
-          <li>302 行脏数据 → 交付 260 行，修复 <b>1,323</b> 个单元格</li>
-          <li>日期 5 种写法 / 金额 ¥ 千分位 / 手机号 3 种格式 / 枚举中英文混杂，全部归一</li>
-          <li>规则写在 JSON 里，<b>改口径不改代码</b>；开工前先出体检报告对齐规则</li>
-          <li>行数守恒：源行数 = 交付 + 剔除 + 去重，误差 0（有随机压测）</li>
+          <li><b>302 行脏数据 → 交付 260 行</b>，修复 <b>1,323</b> 个单元格</li>
+          <li>日期 5 种写法 / 金额 ¥ 千分位 / 手机号 3 种格式，全部归一</li>
+          <li>规则写在配置里，<b>开工前先出体检报告对齐口径</b>，不返工扯皮</li>
+          <li>行数守恒：源行数 = 交付 + 剔除 + 去重，数据不丢可验收</li>
         </ul>
         <div class="cmd">python clean.py --demo</div>
       </div>
@@ -128,14 +128,14 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
       <div class="shot"><img src="shots/s3.png" alt="项目三复盘报表截图">
         <div class="zoom"><a href="https://mming-liu.github.io/offline-analytics-report/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
       <div class="body">
-        <div class="num">PROJECT 03 · 对应服务 3-1 / 3-2 / 3-3</div>
-        <h3>offline-analytics-report · 数据分析</h3>
-        <p class="desc">指标拆解 + 7 张图 + 自动结论，单文件可直接发给老板。</p>
+        <div class="num">PRODUCT 03 · 对应服务 3-1 / 3-2 / 3-3</div>
+        <h3>离线数据分析</h3>
+        <p class="desc">订单明细进，老板能直接看的复盘报表出。</p>
         <ul>
-          <li>同比<b>按月对齐</b>（避免拿 9 个月比 12 个月的假下滑），口径写在报告里</li>
-          <li>品类帕累托 ABC / 转化漏斗 / 目标达成 / 区域渠道客单价对比</li>
-          <li>结论由数据自动生成，每条可回溯到具体图表</li>
-          <li>纯 SVG 无 JS 库：断网、内网、打印 PDF 均不退化</li>
+          <li><b>3,975 条明细 → 7 张图 + 7 条结论</b>，单文件 HTML 双击就开，能打印成 PDF</li>
+          <li>同比按月对齐，口径写在报告里，数字经得起追问</li>
+          <li>品类 / 区域 / 渠道拆解 + 转化漏斗 + 目标达成</li>
+          <li>每条结论都能点回具体图表，不是拍脑袋</li>
         </ul>
         <div class="cmd">python analyze.py --demo</div>
       </div>
@@ -144,7 +144,7 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
   </div>
 
   <section class="plain">
-    <h2><span class="idx">一</span>不用信我们，自己跑一遍 <small>三台不同电脑均可复现，跑前跑后对比产物</small></h2>
+    <h2><span class="idx">一</span>不用信我们，自己跑一遍 <small>本机实测可复现，跑前跑后对比产物</small></h2>
     <p class="sub">环境要求只有一个：Python 3.8+。不需要 pip install 任何东西，不需要网络，不需要管理员权限。</p>
     <div class="verify">
       <div class="v"><div class="n">1</div><div class="t"><b>项目一 · 自动化脚本</b>：19 个乱名文件归位、3 份报表合并、137 条订单同步（含重试）</div><div class="c">python cli.py demo</div></div>
@@ -157,7 +157,7 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
   </section>
 
   <section class="plain">
-    <h2><span class="idx">二</span>店铺服务与演示功能的对照 <small>评标时可直接按编号核对</small></h2>
+    <h2><span class="idx">二</span>店铺服务与演示功能的对照 <small>下单前可直接按编号核对</small></h2>
     <p class="sub">左列是店铺在售服务描述，右列是本次 demo 中可以直接演示的对应实现。</p>
     <table>
       <thead><tr><th style="width:46%">店铺服务</th><th>demo 中的对应实现</th><th style="width:80px">状态</th></tr></thead>
@@ -185,10 +185,11 @@ footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-hei
         <tr><td><b>质量证据</b></td><td>每个项目自带 tests/ 目录与演示数据生成器，客户可随时重跑验证——不依赖我们的口头承诺。</td></tr>
       </tbody>
     </table>
+    <div class="note" style="margin-top:18px"><b style="color:#41536b">技术保障（给较真的客户）</b>：全部项目基于 Python 标准库开发，<b>零第三方依赖</b>，客户电脑断网、不装任何包也能运行；合计 4,425 行源码、<b>43 条自测用例全部通过</b>；所有产物本地留痕 100% 可追溯。文件格式：<b>CSV / Excel 导出表</b>均可直接处理，.xlsx 直读写为生产增强能力，按需提供（离线安装包方案见项目二 README）。</div>
   </section>
 
   <footer>
-    本页与三个项目均位于本地，可打包整体交付 · 演示数据可重复生成，结果稳定<br>
+    三个项目均源码交付、演示数据可重复生成 · 在线报表与代码仓库见各卡片链接<br>
     三条产品线共用一套订单字段口径，清洗产物可直接喂给分析报表（链路已验证）
   </footer>
 </div>

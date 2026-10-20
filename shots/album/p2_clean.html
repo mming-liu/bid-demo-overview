@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;overflow:hidden;background:#f4f6fa;color:#1f2937;
+font:30px/1.7 "Microsoft YaHei","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased}
+.head{background:linear-gradient(120deg,#0f2d4e,#1d5f9c);color:#fff;padding:52px 60px 42px}
+.head .tag{display:inline-block;font-size:24px;letter-spacing:.18em;background:rgba(255,255,255,.16);padding:8px 22px;border-radius:8px}
+.head h1{font-size:56px;font-weight:700;margin:24px 0 12px;letter-spacing:1px}
+.head p{font-size:28px;color:#c7dcf1;line-height:1.8}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:34px 60px 4px}
+.nums.three{grid-template-columns:1fr 1fr 1fr}
+.nums .n{background:#fff;border:1px solid #e4eaf2;border-radius:18px;padding:26px 26px;box-shadow:0 4px 14px rgba(24,42,66,.06)}
+.nums .n b{display:block;font-size:52px;font-weight:700;color:#0f2d4e;letter-spacing:-1px;line-height:1.2}
+.nums .n span{font-size:25px;color:#5b6b7f}
+.nums .n em{font-style:normal;color:#0f8a4d;font-weight:700}
+.sec{background:#fff;border:1px solid #e4eaf2;border-radius:20px;margin:24px 60px;padding:28px 36px;box-shadow:0 4px 14px rgba(24,42,66,.05)}
+.sec h2{font-size:33px;color:#123a63;margin-bottom:16px;border-left:8px solid #1d5f9c;padding-left:18px}
+.sec svg{width:100%;height:auto;display:block}
+.concl li{list-style:none;font-size:28px;line-height:1.68;margin:0 0 16px;padding:18px 24px;background:#f8fbff;border:1px solid #e9eff7;border-radius:14px}
+.concl li b{color:#123a63}
+.prod{background:#fff;border:1px solid #e4eaf2;border-radius:20px;margin:24px 60px 0;padding:30px 38px;box-shadow:0 4px 14px rgba(24,42,66,.05)}
+.prod h3{font-size:38px;color:#123a63}
+.prod h3 span{font-size:23px;color:#7b8a9c;font-weight:400;margin-left:14px}
+.prod p{font-size:27px;color:#41536b;margin-top:8px}
+.prod .k{font-size:28px;color:#0f2d4e;font-weight:700;margin-top:10px}
+.foot{position:absolute;bottom:0;left:0;right:0;background:#0f2942;color:#9fc3e4;font-size:20px;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+.foot b{color:#fff;font-size:21px}
+</style></head><body>
+  <div class="head">
+    <div class="tag">产品 02 · 数据清洗 · 服务 2-1 / 2-2 / 2-3</div>
+    <h1>脏表进，标准表出</h1>
+    <p>五种日期写法、带 ¥ 的金额、重复上报、空值……洗成能直接用的标准数据集，每一格改动都有留痕。</p>
+  </div>
+  <div class="nums three">
+    <div class="n"><b>302 行</b><span>原始脏表</span></div>
+    <div class="n"><b><em>260 行</em></b><span>交付标准数据集</span></div>
+    <div class="n"><b>1,323 处</b><span>单元格修复（可逐格追溯）</span></div>
+  </div>
+  <div class="sec"><h2>这次清洗改了什么</h2><ul class="concl">
+    <li><b>格式归一</b> —— 日期 5 种写法 → YYYY-MM-DD；金额去掉 ¥ 和千分位；手机号统一 11 位并校验</li>
+    <li><b>缺失与异常</b> —— 必填项按中位数 / 众数填充；IQR 超界异常只标记不删除，4 条留待人工复核</li>
+    <li><b>去重守恒</b> —— 同一订单重复上报保留字段最全的一条；302 = 260 + 剔除 8 + 去重 34，数据不丢</li>
+  </ul></div>
+  <div class="sec"><h2>交付物</h2><ul class="concl">
+    <li><b>标准数据集</b> —— clean_dataset.csv，可直接入库 / 建模 / 做报表</li>
+    <li><b>清洗报告</b> —— 前后体检对比 HTML，问题分布与待复核清单全在报告里</li>
+    <li><b>规则清单</b> —— 规则写在配置文件里，开工前先对齐口径再动手</li>
+  </ul></div>
+<div class="foot"><b>需求分析师 + 测试与开发工程师</b><span>源码交付 · 本机可复现 · 数据不出电脑</span><span>服务 2-1 · 2-2 · 2-3</span></div></body></html>

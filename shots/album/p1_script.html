@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;overflow:hidden;background:#f4f6fa;color:#1f2937;
+font:30px/1.7 "Microsoft YaHei","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased}
+.head{background:linear-gradient(120deg,#0f2d4e,#1d5f9c);color:#fff;padding:52px 60px 42px}
+.head .tag{display:inline-block;font-size:24px;letter-spacing:.18em;background:rgba(255,255,255,.16);padding:8px 22px;border-radius:8px}
+.head h1{font-size:56px;font-weight:700;margin:24px 0 12px;letter-spacing:1px}
+.head p{font-size:28px;color:#c7dcf1;line-height:1.8}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:34px 60px 4px}
+.nums.three{grid-template-columns:1fr 1fr 1fr}
+.nums .n{background:#fff;border:1px solid #e4eaf2;border-radius:18px;padding:26px 26px;box-shadow:0 4px 14px rgba(24,42,66,.06)}
+.nums .n b{display:block;font-size:52px;font-weight:700;color:#0f2d4e;letter-spacing:-1px;line-height:1.2}
+.nums .n span{font-size:25px;color:#5b6b7f}
+.nums .n em{font-style:normal;color:#0f8a4d;font-weight:700}
+.sec{background:#fff;border:1px solid #e4eaf2;border-radius:20px;margin:24px 60px;padding:28px 36px;box-shadow:0 4px 14px rgba(24,42,66,.05)}
+.sec h2{font-size:33px;color:#123a63;margin-bottom:16px;border-left:8px solid #1d5f9c;padding-left:18px}
+.sec svg{width:100%;height:auto;display:block}
+.concl li{list-style:none;font-size:28px;line-height:1.68;margin:0 0 16px;padding:18px 24px;background:#f8fbff;border:1px solid #e9eff7;border-radius:14px}
+.concl li b{color:#123a63}
+.prod{background:#fff;border:1px solid #e4eaf2;border-radius:20px;margin:24px 60px 0;padding:30px 38px;box-shadow:0 4px 14px rgba(24,42,66,.05)}
+.prod h3{font-size:38px;color:#123a63}
+.prod h3 span{font-size:23px;color:#7b8a9c;font-weight:400;margin-left:14px}
+.prod p{font-size:27px;color:#41536b;margin-top:8px}
+.prod .k{font-size:28px;color:#0f2d4e;font-weight:700;margin-top:10px}
+.foot{position:absolute;bottom:0;left:0;right:0;background:#0f2942;color:#9fc3e4;font-size:20px;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+.foot b{color:#fff;font-size:21px}
+</style></head><body>
+  <div class="head">
+    <div class="tag">产品 01 · Python 脚本开发 · 服务 1-1 / 1-2 / 1-3</div>
+    <h1>重复的活儿，一键跑完</h1>
+    <p>批量重命名、表格合并拆分、接口对接，做成一条命令就能跑的本地脚本，交付源码和运行说明。</p>
+  </div>
+  <div class="nums three">
+    <div class="n"><b>19 个</b><span>乱名文件一键归位</span></div>
+    <div class="n"><b>3 张</b><span>口径不一的表自动对齐</span></div>
+    <div class="n"><b>137 条</b><span>订单分页同步带重试</span></div>
+  </div>
+  <div class="sec"><h2>和手工做有什么不一样</h2><ul class="concl">
+    <li><b>先预览，后执行</b> —— 重命名先出「原名 → 新名」对照表，确认了才动你的原文件，冲突直接中止</li>
+    <li><b>表头不一致也能合</b> —— 三张表字段名对不上？自动按并集对齐，带来源标记，随时能查这行来自哪个表</li>
+    <li><b>接口挂了会自己重试</b> —— 分页拉取逐页留痕，请求失败自动退避重试，断了知道断在哪一页</li>
+    <li><b>跑完有日报</b> —— 每次运行生成 Markdown / HTML 日报：处理了多少、跳过了什么、哪里要人工看</li>
+  </ul></div>
+  <div class="sec"><h2>你会拿到什么</h2><ul class="concl">
+    <li><b>全部源码 + 运行说明</b> —— 改文件名规则、合并口径，改配置就行</li>
+    <li><b>自测用例随包交付</b> —— 假日期、空文件、接口不通都测过，可自己重跑验证</li>
+  </ul></div>
+<div class="foot"><b>需求分析师 + 测试与开发工程师</b><span>源码交付 · 本机可复现 · 数据不出电脑</span><span>服务 1-1 · 1-2 · 1-3</span></div></body></html>
