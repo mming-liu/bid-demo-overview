@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>能力演示总览 · 需求分析师 + 测试与开发工程师</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6fa;color:#1f2937;font:14px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:30px 22px 70px}
+.hero{position:relative;background:linear-gradient(120deg,#0f2d4e 0%,#123a63 55%,#1d5f9c 100%);color:#fff;border-radius:18px;padding:40px 40px 34px;box-shadow:0 14px 36px rgba(15,45,78,.25);overflow:hidden}
+.hero:after{content:"";position:absolute;right:-80px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.055)}
+.hero .tag{display:inline-block;font-size:11.5px;letter-spacing:.22em;background:rgba(255,255,255,.15);padding:5px 12px;border-radius:4px}
+.hero h1{margin:18px 0 10px;font-size:30px;font-weight:700;letter-spacing:.6px;line-height:1.4}
+.hero h1 em{font-style:normal;color:#8fd0ff}
+.hero p{margin:0;max-width:640px;color:#c7dcf1;font-size:13.5px;line-height:2}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;backdrop-filter:blur(2px)}
+.stat b{display:block;font-size:25px;font-weight:700;letter-spacing:-.4px;color:#fff}
+.stat span{font-size:12px;color:#a9c6e2}
+.chain{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;gap:0;align-items:stretch;margin-top:26px}
+.chain .node{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 16px;font-size:12.5px;color:#dbe9f8;line-height:1.7}
+.chain .node b{color:#fff;font-size:13px;display:block}
+.chain .node a{color:#fff;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.4)}
+.chain .node a:hover{border-bottom-color:#fff}
+.chain .link{display:flex;align-items:center;justify-content:center;color:#7fb2e0;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px;margin-top:20px}
+.card{background:#fff;border:1px solid #e4eaf2;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(24,42,66,.06);display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(24,42,66,.12)}
+.card .shot{position:relative;height:225px;overflow:hidden;background:#eef2f7}
+.card .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card .shot .zoom{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,45,78,.55));display:flex;align-items:flex-end;padding:12px 16px}
+.card .shot .zoom a{color:#fff;font-size:12px;text-decoration:none;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.3)}
+.card .shot .zoom a:hover{background:rgba(255,255,255,.3)}
+.card .body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.card .num{font-size:11px;letter-spacing:.16em;color:#7b8a9c}
+.card h3{margin:4px 0 6px;font-size:16.5px;color:#123a63}
+.card .desc{font-size:12.8px;color:#5b6b7f;margin:0 0 12px}
+.card ul{margin:0 0 14px;padding:0;list-style:none;font-size:12.5px;color:#41536b}
+.card li{padding:3.5px 0 3.5px 22px;position:relative}
+.card li:before{content:"✓";position:absolute;left:0;color:#0f8a4d;font-weight:700}
+.card .cmd{margin-top:auto;background:#0f2942;color:#a8d5ff;font-size:11.5px;padding:8px 12px;border-radius:7px;font-family:"Cascadia Mono",Consolas,monospace;overflow-x:auto;white-space:nowrap}
+section.plain{background:#fff;border:1px solid #e4eaf2;border-radius:16px;padding:26px 28px;margin-top:22px;box-shadow:0 3px 12px rgba(24,42,66,.05)}
+h2{font-size:16.5px;margin:0 0 4px;color:#123a63;display:flex;align-items:center;gap:9px}
+h2 .idx{width:24px;height:24px;line-height:24px;text-align:center;background:#123a63;color:#fff;border-radius:6px;font-size:12px;font-weight:600}
+h2 small{font-weight:400;color:#8a9aae;font-size:12px;margin-left:auto}
+.sub{color:#7b8a9c;font-size:12.5px;margin:6px 0 16px}
+table{width:100%;border-collapse:collapse;font-size:12.8px}
+th{background:#f4f7fb;color:#4b5c71;font-weight:600;text-align:left;padding:9px 11px;border-bottom:2px solid #e1e9f2;white-space:nowrap}
+td{padding:8px 11px;border-bottom:1px solid #eff3f8;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafcff}
+.svc{font-size:11px;color:#123a63;background:#e8f0fb;border-radius:4px;padding:1px 7px;font-weight:600;white-space:nowrap}
+.ok{color:#0f8a4d;font-weight:700}
+.verify{display:grid;gap:12px}
+.verify .v{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:center;background:#fafcff;border:1px solid #e9eff7;border-radius:10px;padding:12px 16px}
+.verify .v .n{width:26px;height:26px;line-height:26px;text-align:center;background:#eef4fb;color:#123a63;border-radius:50%;font-weight:700;font-size:12.5px}
+.verify .v .t{font-size:13px;color:#41536b}
+.verify .v .t b{color:#123a63}
+.verify .v .c{background:#0f2942;color:#a8d5ff;font-size:11.5px;padding:6px 12px;border-radius:6px;font-family:Consolas,monospace;white-space:nowrap}
+.note{font-size:12px;color:#8a9aae;margin-top:14px;line-height:1.9}
+.note a{color:#1d4e89;text-decoration:none;border-bottom:1px solid rgba(29,78,137,.35)}
+.note a:hover{border-bottom-color:#1d4e89}
+footer{margin-top:26px;color:#8a9aae;font-size:11.5px;text-align:center;line-height:1.9}
+@media(max-width:900px){.chain{grid-template-columns:1fr}.chain .link{transform:rotate(90deg);height:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="tag">能力演示总览 · 可现场复现</div>
+    <h1>Python 本地脚本 · 数据清洗 · 离线数据分析<br><em>三个可运行的项目，43 条自测用例，零第三方依赖</em></h1>
+    <p>由「需求分析师 + 测试与开发工程师」轻量化协作交付。每一个数字都来自真实运行的脚本输出——本页所有截图不是示意图，是三个项目实际跑出来的产物。</p>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>可运行项目（对应三条产品线）</span></div>
+      <div class="stat"><b>4,425</b><span>行源码，含注释可读可改</span></div>
+      <div class="stat"><b>43 / 43</b><span>自测用例通过（0 失败）</span></div>
+      <div class="stat"><b>0</b><span>第三方依赖 · 断网可运行</span></div>
+      <div class="stat"><b>100%</b><span>产物本地留痕 · 可逐条追溯</span></div>
+    </div>
+    <div class="chain">
+      <div class="node"><b><a href="https://github.com/mming-liu/py-automation-kit" target="_blank" rel="noopener">① py-automation-kit</a></b>接口同步 / 批量重命名 / 表格合并 → 产出原始数据</div>
+      <div class="link">→</div>
+      <div class="node"><b><a href="https://github.com/mming-liu/data-clean-pipeline" target="_blank" rel="noopener">② data-clean-pipeline</a></b>脏数据体检 → 规则清洗 → 标准数据集 + 逐格留痕</div>
+      <div class="link">→</div>
+      <div class="node"><b><a href="https://github.com/mming-liu/offline-analytics-report" target="_blank" rel="noopener">③ offline-analytics-report</a></b>指标拆解 → 图表 → 汇报级复盘报表</div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="shot"><img src="shots/s1.png" alt="项目一运行报告截图">
+        <div class="zoom"><a href="https://mming-liu.github.io/py-automation-kit/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
+      <div class="body">
+        <div class="num">PROJECT 01 · 对应服务 1-1 / 1-2 / 1-3</div>
+        <h3>py-automation-kit · Python 脚本开发</h3>
+        <p class="desc">一条命令跑完四个任务，每一步可独立复跑。</p>
+        <ul>
+          <li>批量重命名：<b>先出预览表</b>，冲突检测不过不落盘，可回滚</li>
+          <li>多表合并：表头不一致自动按并集对齐，带来源列可追溯</li>
+          <li>接口同步：内置 Mock 服务，首请求 503 演示重试，逐页留痕</li>
+          <li>17 条边界测试（假日期 / 空输入 / 连不上接口）</li>
+        </ul>
+        <div class="cmd">python cli.py demo</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shot"><img src="shots/s2.png" alt="项目二清洗报告截图">
+        <div class="zoom"><a href="https://mming-liu.github.io/data-clean-pipeline/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
+      <div class="body">
+        <div class="num">PROJECT 02 · 对应服务 2-1 / 2-2 / 2-3</div>
+        <h3>data-clean-pipeline · 数据清洗</h3>
+        <p class="desc">脏表进、标准数据集出，每一个改动都有留痕。</p>
+        <ul>
+          <li>302 行脏数据 → 交付 260 行，修复 <b>1,323</b> 个单元格</li>
+          <li>日期 5 种写法 / 金额 ¥ 千分位 / 手机号 3 种格式 / 枚举中英文混杂，全部归一</li>
+          <li>规则写在 JSON 里，<b>改口径不改代码</b>；开工前先出体检报告对齐规则</li>
+          <li>行数守恒：源行数 = 交付 + 剔除 + 去重，误差 0（有随机压测）</li>
+        </ul>
+        <div class="cmd">python clean.py --demo</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shot"><img src="shots/s3.png" alt="项目三复盘报表截图">
+        <div class="zoom"><a href="https://mming-liu.github.io/offline-analytics-report/" target="_blank" rel="noopener">在线打开完整报告 ↗</a></div></div>
+      <div class="body">
+        <div class="num">PROJECT 03 · 对应服务 3-1 / 3-2 / 3-3</div>
+        <h3>offline-analytics-report · 数据分析</h3>
+        <p class="desc">指标拆解 + 7 张图 + 自动结论，单文件可直接发给老板。</p>
+        <ul>
+          <li>同比<b>按月对齐</b>（避免拿 9 个月比 12 个月的假下滑），口径写在报告里</li>
+          <li>品类帕累托 ABC / 转化漏斗 / 目标达成 / 区域渠道客单价对比</li>
+          <li>结论由数据自动生成，每条可回溯到具体图表</li>
+          <li>纯 SVG 无 JS 库：断网、内网、打印 PDF 均不退化</li>
+        </ul>
+        <div class="cmd">python analyze.py --demo</div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="plain">
+    <h2><span class="idx">一</span>不用信我们，自己跑一遍 <small>三台不同电脑均可复现，跑前跑后对比产物</small></h2>
+    <p class="sub">环境要求只有一个：Python 3.8+。不需要 pip install 任何东西，不需要网络，不需要管理员权限。</p>
+    <div class="verify">
+      <div class="v"><div class="n">1</div><div class="t"><b>项目一 · 自动化脚本</b>：19 个乱名文件归位、3 份报表合并、137 条订单同步（含重试）</div><div class="c">python cli.py demo</div></div>
+      <div class="v"><div class="n">2</div><div class="t"><b>项目二 · 数据清洗</b>：生成脏数据 → 清洗 → 出逐格留痕与 HTML 报告</div><div class="c">python clean.py --demo</div></div>
+      <div class="v"><div class="n">3</div><div class="t"><b>项目三 · 数据分析</b>：4,000 条明细 → 指标拆解 → 汇报级报表 + 结论摘要</div><div class="c">python analyze.py --demo</div></div>
+      <div class="v"><div class="n">4</div><div class="t"><b>验证质量</b>：43 条自测用例（边界 / 异常路径 / 行数守恒），输出 OK 即通过</div><div class="c">python -m unittest discover -s tests</div></div>
+    </div>
+    <div class="note">测试结果（本机实测）：py-automation-kit <span class="ok">17/17 OK</span> · data-clean-pipeline <span class="ok">15/15 OK</span> · offline-analytics-report <span class="ok">11/11 OK</span>。</div>
+    <div class="note">每个项目的 README 第「零」节都写明了从零开始的分步操作：确认 Python → 进目录 → 跑演示 → 打开产物 → 跑自测 → 换自己的数据 → 故障排查表（<a href="https://github.com/mming-liu/py-automation-kit">项目一</a> · <a href="https://github.com/mming-liu/data-clean-pipeline">项目二</a> · <a href="https://github.com/mming-liu/offline-analytics-report">项目三</a>）。</div>
+  </section>
+
+  <section class="plain">
+    <h2><span class="idx">二</span>店铺服务与演示功能的对照 <small>评标时可直接按编号核对</small></h2>
+    <p class="sub">左列是店铺在售服务描述，右列是本次 demo 中可以直接演示的对应实现。</p>
+    <table>
+      <thead><tr><th style="width:46%">店铺服务</th><th>demo 中的对应实现</th><th style="width:80px">状态</th></tr></thead>
+      <tbody>
+        <tr><td><span class="svc">1-1</span> Python 脚本定制 / Excel 批量处理 / 源码交付 + 运行说明</td><td>批量重命名 + 多表合并；交付《docs/运行说明.md》与演示数据生成器</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">1-2</span> 批量文件重命名提取 / 边界测试自测</td><td>日期提取模板引擎 + 17 条边界用例（含假日期、冲突、连不上接口）</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">1-3</span> 本地脚本 / 轻量 / 无服务器</td><td>全项目零第三方依赖、单机运行、无安装步骤</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">2-1</span> 字段统一去重 / 异常值过滤 / 标准数据集交付</td><td>8 步清洗流水线；去重保留最全记录；IQR 异常标记；clean_dataset.csv</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">2-2</span> 缺失值填充纠错 / 开工前对齐规则</td><td>中位数/众数/默认值填充；体检报告 profile_before.json 供客户开工前确认</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">2-3</span> 离线文件交付 / 不接云数据库</td><td>全程本地文件读写，无网络调用（接口同步亦为本地 Mock）</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">3-1</span> 可视化图表 / 周期性报表 / 交付分析结果</td><td>7 张内联 SVG 图 + 汇报级 HTML；支持计划任务按月复跑归档</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">3-2</span> 多维度指标拆解 / 汇报级图表</td><td>品类/区域/渠道三维拆解 + 帕累托 ABC + 转化漏斗 + 目标达成</td><td class="ok">已演示</td></tr>
+        <tr><td><span class="svc">3-3</span> 目标前置对齐 / 结果核验交付 / 报表定制</td><td>指标口径写进报告第 11 节；结论逐条回溯；metrics.json 供核验</td><td class="ok">已演示</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="plain">
+    <h2><span class="idx">三</span>协作方式（为什么两个角色就够了）</h2>
+    <p class="sub">这套 demo 本身就是协作模式的作品：需求侧负责口径与验收标准，工程侧负责实现与测试。</p>
+    <table>
+      <tbody>
+        <tr><td style="width:170px"><b>需求分析师</b></td><td>把「客户说的」翻译成「可验收的」：字段口径、清洗规则、异常判定、报表指标定义——都落在配置文件与报告里，白纸黑字可确认，避免做完才发现理解不一致。</td></tr>
+        <tr><td><b>测试与开发工程师</b></td><td>同一人开发和测试，交付前必须跑完 43 条自测用例；行数守恒、冲突检测、重试留痕这类「不会改坏客户文件」的机制都是测试驱动出来的。</td></tr>
+        <tr><td><b>质量证据</b></td><td>每个项目自带 tests/ 目录与演示数据生成器，客户可随时重跑验证——不依赖我们的口头承诺。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    本页与三个项目均位于本地，可打包整体交付 · 演示数据可重复生成，结果稳定<br>
+    三条产品线共用一套订单字段口径，清洗产物可直接喂给分析报表（链路已验证）
+  </footer>
+</div>
+</body>
+</html>
